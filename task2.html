@@ -1,63 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alignment</title>
+    <title>Document</title>
     <style>
-        *{
-            box-sizing: border-box;
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 20px ;
+            position: relative;
+            
+        }
+
+        ul li:hover {
+            background-color: green;
+            color: white;
+        }
+
+        .dropdown1{
+            display: none;
+        }
+        ul li:hover .dropdown1{
+            display: block;
+            position: absolute;
+            margin-left: -0.2cm;
+            margin-top: 0.2cm;
+        }
+        .dropdown1 ul{
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown1 ul li{
+            display: block;
+        }
+
+        .dropdown2 {
+            display: none;
+        }
+        ul li:hover .dropdown2 {
+            display: block;
+            position: absolute;
+            margin-left: -0.2cm;
+            margin-top: 0.2cm;
+        }
+        .dropdown2 ul {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown2 ul li {
+            display: block;
 
         }
-        body{
-            font-family: 'ubuntu',sans-serif;
+
+        .dropdown3 {
+            display: none;
         }
-        .Container{
-            width: 600px;
-            border: 3px solid purple;
+        ul li:hover .dropdown3 {
+            display: block;
+            position: absolute;
+            margin-left: -0.5cm;
+            margin-top: 0.2cm;
+        }
+        .dropdown3 ul {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown3 ul li {
+            display: block;
+
+        }
+
+        .firstsection {
+            background: aqua;
+            display: flex;
+            text-align: center;
+            height: 200px;
             margin: auto;
         }
-        .item{
-            border: 2px solid grey;
-            margin: 12px 3px;
-            padding: 12px 3px;
-            background: rgb(226, 208, 208);
-        }
-        #fruits{
-            float: left;
-            width: 48%;
-        }
-        #computer{
-            float: right;
-            width: 48%;
-        }
-        #stationary{
-            /*float: left;*/
-            width: 100%;
-            clear: both;
-        }
-        p{
-            text-align: right;
-            text-align: left;
+
+        .secondsection {
+            background: burlywood;
             text-align: center;
-            text-align: justify;
+            display: flex;
+            height: 200px;
+            margin: auto;
         }
+
+        .thirdsection {
+            background: orangered;
+            text-align: center;
+            display: flex;
+            height: 300px;
+            margin: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: orange;
+        }
+
+        .text-footer {
+            font-size: x-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
     </style>
 </head>
+
 <body>
-    <div class="Container">
-        <div id="fruits" class="item">
-            <h2>Fruits</h2>
-            <p id="fruitspara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+    <ul>
+        <li><a href="#app">App Technology</a>
+        <div class="dropdown1">
+            <ul>
+                <li><a href="#">Kotlin</a></li>
+                <li><a href="#">Flutter</a></li>
+                <li><a href="#">Swift UI</a></li>
+                <li><a href="#">Reat Native</a></li>
+            </ul>
         </div>
-        <div id="computer" class="item">
-            <h2>Computer</h2>
-            <p id="computerpara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+        </li>
+        <li><a href="#web">Web Technology</a>
+        <div class="dropdown2">
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JAVA Script</a></li>
+            </ul>
         </div>
-        <div id="stationary" class="item">
-            <h2>Stationary</h2>
-            <p id="stationarypara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+        </li>
+        <li><a href="#course"> All Courses </a>
+            <div class="dropdown3">
+                <ul>
+                                <li><a href="#">Full Stack</a></li>
+                                <li><a href="#">Frontend</a></li>
+                                <li><a href="#">Backend</a></li>
+                                <li><a href="#">AI and ML</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>Contact us</li>
+        <input type="button" id="rightnav" value="Search">
+    </ul>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firsthalf">
+                <h1 class="text-big" id="web">
+                    Web Technology
+                </h1>
+                <p class="text-small">
+                    HyperText Markup Language (HTML) is the standard markup language for documents designed to be
+                    displayed in a web browser. It defines the content and structure of web content. It is often
+                    assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as
+                    JavaScript.
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="secondsection">
+        <div class="box-main">
+            <div class="seconhalf">
+                <h1 class="text-big" id="app">
+                    Kotlin
+                </h1>
+                <p class="text-small">
+                    Kotlin (/ˈkɒtlɪn/)[2] is a cross-platform, statically typed, general-purpose high-level programming language with type inference. Kotlin is designed to interoperate fully with Java, and the JVM version of Kotlin's standard library depends on the Java Class Library, but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript (e.g., for frontend web applications using React)[3] or native code via LLVM (e.g., for native iOS apps sharing business logic with Android apps).[4] Language development costs are borne by JetBrains, while the Kotlin Foundation protects the Kotlin trademark.[5]
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="thirdsection">
+        <div class="box-main">
+            <div class="thirdhalf">
+                <h1 class="text-big" id="program">
+                    C Programming
+                </h1>
+                <p class="text-small">
+                    C is a general-purpose, procedural, high-level programming language used in the development of
+                    computer software and applications, system programming, games, and more.
+
+                    C language was developed by Dennis M. Ritchie at the Bell Telephone Laboratories in 1972.
+                    It is a powerful and flexible language which was first developed for the programming of the UNIX
+                    operating System.
+                    C is one of the most widely used programming languages.
+                </p>
+                <h1 class="text-big" id="java">
+                    JAVA
+                </h1>
+                <p class="text-small">
+                    Developed by Sun Microsystems in 1995, Java is a highly popular, object-oriented programming
+                    language. This platform independent programming language is utilized for Android development, web
+                    development, artificial intelligence, cloud applications, and much more
+                </p>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+
+    <footer class="background">
+        <p class="text-footer">
+             Website created By Saroj
+        </p>
+    </footer>
+
+
+
 </body>
+
 </html>
