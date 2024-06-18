@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment</title>
+    <style>
+        *{
+            box-sizing: border-box;
+
+        }
+        body{
+            font-family: 'ubuntu',sans-serif;
+        }
+        .Container{
+            width: 600px;
+            border: 3px solid purple;
+            margin: auto;
+        }
+        .item{
+            border: 2px solid grey;
+            margin: 12px 3px;
+            padding: 12px 3px;
+            background: rgb(226, 208, 208);
+        }
+        #fruits{
+            float: left;
+            width: 48%;
+        }
+        #computer{
+            float: right;
+            width: 48%;
+        }
+        #stationary{
+            /*float: left;*/
+            width: 100%;
+            clear: both;
+        }
+        p{
+            text-align: right;
+            text-align: left;
+            text-align: center;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <div id="fruits" class="item">
+            <h2>Fruits</h2>
+            <p id="fruitspara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+        </div>
+        <div id="computer" class="item">
+            <h2>Computer</h2>
+            <p id="computerpara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+        </div>
+        <div id="stationary" class="item">
+            <h2>Stationary</h2>
+            <p id="stationarypara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus praesentium eligendi similique aut laborum exercitationem facilis quidem nulla, quod, rerum ut quibusdam dicta eius, laudantium non! Optio error eligendi sint qui eius dolor id excepturi rem porro tenetur eveniet iure, cupiditate quia cum reiciendis. Minus quidem ex doloribus similique!</p>
+        </div>
+    </div>
+</body>
+</html>
