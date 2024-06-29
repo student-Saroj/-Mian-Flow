@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Webpage</title>
+  <style>
+    /* Form validation styles */
+    .error {
+      color: red;
+    }
+
+    /* Interactive menu styles */
+    #myMenu {
+      position: relative;
+      display: inline-block;
+    }
+
+    #myMenu ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #myMenu ul li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    #myMenu ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    #myMenu ul li a:hover {
+      background-color: #ccc;
+      color: #ffffffe0;
+    }
+
+    #myMenu.show ul {
+      display: block;
+    }
+
+    /* Dynamic content updates styles */
+    #myDashboard {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #myDashboard div {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Webpage</h1>
+
+  <!-- Form validation -->
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="error-message"></div>
+
+  <!-- Interactive menu -->
+  <div id="myMenu">
+    <button>Menu</button>
+    <ul>
+      <li><a href="#">Item 1</a></li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+    </ul>
+  </div>
+
+  <!-- Dynamic content updates -->
+  <div id="myDashboard">
+    <!-- dynamic content will be updated here -->
+  </div>
+
+  <script>
+    // Form validation
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+
+      if (name.value === '') {
+        document.getElementById('error-message').innerHTML = 'Please enter your name';
+        document.getElementById('error-message').classList.add('error');
+        return;
+      }
+
+      if (email.value === '' || !email.value.includes('@')) {
+        document.getElementById('error-message').innerHTML = 'Please enter a valid email address';
+        document.getElementById('error-message').classList.add('error');
+        return;
+      }
+
+      form.submit();
+    });
+
+    // Interactive menu
+    const menu = document.getElementById('myMenu');
+
+    menu.addEventListener('mouseover', () => {
+      menu.classList.add('show');
+    });
+
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Dynamic content updates
+    const newData = [
+      { label: 'Sales', value: 100 },
+      { label: 'Revenue', value: 500 },
+      { label: 'Users', value: 1000 }
+    ];
+
+    newData.forEach((item) => {
+      const element = document.createElement('div');
+      element.textContent = `${item.label}: ${item.value}`;
+      document.getElementById('myDashboard').appendChild(element);
+    });
+  </script>
+</body>
+</html>
